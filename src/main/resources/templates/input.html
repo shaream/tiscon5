@@ -16,6 +16,7 @@
   <form th:action="@{/submit}" th:object="${userOrderForm}" class="form-horizontal" method="post">
     <h1>お見積り情報入力</h1>
     <ul th:if="${#fields.hasErrors('all')}">
+      <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
     </ul>
     <div class="col-sm-12">
       <fieldset>
@@ -130,19 +131,16 @@
         <div align="right"> <span style="color:red">＊ベッド・自転車・洗濯機の個数は合わせて10個までとさせていただきます。</span> </div>
 
         <div class="form-group">
-          <label for="hasWashingMachineSettingOption">洗濯機の設置工事申し込み</label>
-          <font color="#ff0000"><li th:each="err : ${#fields.errors('hasWashingMachineSettingOption')}" th:text="${err}"></li></font>
-          <select id="hasWashingMachineSettingOption" name="hasWashingMachineSettingOption" class="form-control" th:field="*{hasWashingMachineSettingOption}">
-            <option th:value="false" th:text="なし">なし</option>
-            <option th:value="true" th:text="あり">あり</option>
-          </select>
+          <label for="hasWashingMachineSettingOption">洗濯機の設置工事申し込み</label><br>
+<!--          <form method="post" action="example.cgi">-->
+          <input type="radio" name="q1" value="あり"> あり
+          <input type="radio" name="q1" value="なし"> なし
         </div>
       </fieldset>
-
       <div class="form-group">
         <div class="text-center">
-          <button type="submit" name="confirm" class="btn btn-primary">確認</button>
           <button type="submit" name="backToTop" class="btn btn-primary">TOPへ戻る</button>
+          <button type="submit" name="confirm" class="btn btn-primary">確認</button>
         </div>
       </div>
     </div>
