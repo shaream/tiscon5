@@ -127,12 +127,19 @@
 
         <div align="right"> <span style="color:red">＊ベッド・自転車・洗濯機の個数は合わせて10個までとさせていただきます。</span> </div>
 
-        <div class="form-group">
-          <label for="hasWashingMachineSettingOption">洗濯機の設置工事申し込み</label><br>
-<!--          <form method="post" action="example.cgi">-->
-          <input type="radio" name="q1" value="あり"> あり
-          <input type="radio" name="q1" value="なし"> なし
-        </div>
+        <table class="form-group">
+          <tr>
+            <td for="hasWashingMachineSettingOption">洗濯機の設置工事申し込み
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" id="hasWashingMachineSettingOption" name="hasWashingMachineSettingOption" th:field="*{hasWashingMachineSettingOption}" th:value="true" th:text="あり">
+              <input type="radio" id="hasWashingMachineSettingOption" name="hasWashingMachineSettingOption" th:field="*{hasWashingMachineSettingOption}" th:value="false" th:text="なし"　>
+            </td>
+          </tr>
+        </table>
+
       </fieldset>
       <div class="form-group">
         <div class="text-center">
