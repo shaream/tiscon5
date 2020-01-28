@@ -117,7 +117,7 @@ public class UserOrderDto {
         return hasWashingMachineSettingOption;
     }
 
-    public void setWashingMachineSettingOption(Boolean hasWashingMachineSettingOption) {
+    public void setHasWashingMachineSettingOption(Boolean hasWashingMachineSettingOption) {
         this.hasWashingMachineSettingOption = hasWashingMachineSettingOption;
     }
 }
